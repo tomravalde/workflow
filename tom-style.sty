@@ -1,0 +1,79 @@
+\ProvidesPackage{healy-tufte-style}
+
+%\usepackage[a4paper]{geometry}
+%\usepackage[
+%	left=24.8mm, 
+%	textwidth=100mm,
+%	marginparsep=2pc,
+%	marginparwidth=12pc]{geometry}
+\usepackage{parskip}
+%\usepackage[pdftex]{graphicx}
+\usepackage{color}
+\usepackage[]{graphicx}
+\usepackage{subfig}
+\usepackage{array}
+\usepackage{amsmath}
+%\usepackage{fullpage}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{fixltx2e}
+\usepackage[bottom]{footmisc}
+\usepackage{natbib}
+\bibpunct{(}{)}{;}{a}{,}{,}
+%\usepackage{nomencl}
+\usepackage{booktabs}
+\usepackage{rotating}
+%\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,automata}
+\usepackage{url}
+%\usepackage[]{times}
+\usepackage{enumerate}
+\usepackage{listings}
+\lstset{language=Python,
+	basicstyle=\ttfamily\small,
+	breaklines=true}
+
+\usepackage{sectsty}
+%\allsectionsfont{\normalsize\sffamily}
+\sectionfont{\large\sffamily\bfseries}
+\subsectionfont{\large\sffamily\itshape}
+%\usepackage[]{titlesec}
+%\newcommand{\sectionbreak}{\clearpage}
+
+%\let\stdsection\section
+%\renewcommand\section{\clearpage\stdsection}
+
+% Header and footer
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\headsep = 20pt
+\pagestyle{fancyplain}
+%\lhead{\fancyplain{}{\textit{\nouppercase\leftmark}}}
+\rhead{}
+
+\fancyfoot[LE,LO]{\footnotesize{\texttt{Revision \VCRevision \\on \VCDateISO~at~\VCTime}}}
+
+% User-defined commands
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\COtwo}{CO\textsubscript{2} }
+
+% Set article title in similar format to Kieren Healy.
+\makeatletter
+\renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
+
+\includegraphics[width=0.5\textwidth]{./img/ImperialLogo.jpg}\\[3em]
+\begin{flushleft}
+	{\LARGE \bfseries \sffamily \bigskip \bigskip \@title} \\[0.5em]
+	  
+	{\Large \@author \\[0.3em] 
+	\itshape Civil and Environmental Engineering} \\ %[0.2cm]
+	{\normalsize \bigskip \@date}
+    \end{flushleft}\egroup
+}
+\makeatother
+
+\renewcommand{\abstractname}{}

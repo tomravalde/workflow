@@ -1,0 +1,50 @@
+\documentclass[a4paper]{article}
+\usepackage{healy-tufte-style}
+
+%\immediate\write18{sh ./vc}
+\input vc
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+\usepackage{fontspec}
+
+$if(title)$
+\title{$title$}
+$endif$
+\author
+{
+$for(author)$
+$if(author.name)$
+$author.name$$if(author.affiliation)$ ($author.affiliation$)$endif$
+$else$
+$author$
+$endif$
+$endfor$
+}
+\date{$date$}
+
+
+\begin{document}  
+
+\setsansfont[Mapping=tex-text]{Linux Biolinum}
+\setmonofont[Mapping=tex-text]{Liberation Mono}
+\setromanfont[Mapping=tex-text]{Gentium Basic}
+
+$if(title)$
+\maketitle
+\thispagestyle{empty}
+$endif$
+
+\bigskip \bigskip 
+
+$if(abstract)$
+\begin{abstract}
+\noindent $abstract$
+\end{abstract}
+$endif$
+
+$body$
+
+\end{document}
