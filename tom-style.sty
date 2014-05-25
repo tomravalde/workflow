@@ -17,6 +17,7 @@
 \usepackage{pdfpages}
 \usepackage{float}
 \usepackage{multirow}
+\usepackage{hyperref}
 \usepackage{fixltx2e}
 \usepackage[bottom]{footmisc}
 \usepackage{natbib}
@@ -41,6 +42,8 @@
 \subsectionfont{\large\sffamily\itshape}
 %\usepackage[]{titlesec}
 %\newcommand{\sectionbreak}{\clearpage}
+\usepackage{hyphenat}
+\hyphenation{infra-structure}
 
 %\let\stdsection\section
 %\renewcommand\section{\clearpage\stdsection}
@@ -69,11 +72,16 @@
 \begin{flushleft}
 	{\LARGE \bfseries \sffamily \bigskip \bigskip \@title} \\[0.5em]
 	  
-	{\Large \@author \\[0.3em] 
-	\itshape Civil and Environmental Engineering} \\ %[0.2cm]
+	{\Large \@author \\[0.3em]}
 	{\normalsize \bigskip \@date}
     \end{flushleft}\egroup
 }
 \makeatother
+
+%% Redefine \and and \andnext to remove tabular environment.
+%% Needed below for custom article-styles when multiple authors are present.
+%\renewcommand{\and}{\, }
+%\renewcommand*{\andnext}{%
+%	  \\\medskip }
 
 \renewcommand{\abstractname}{}

@@ -1,7 +1,7 @@
 \documentclass[a4paper]{article}
-\usepackage{healy-tufte-style}
+\usepackage{tom-style}
+\usepackage{custom-local}
 
-%\immediate\write18{sh ./vc}
 \input vc
 
 $if(highlighting-macros)$
@@ -17,14 +17,15 @@ $endif$
 {
 $for(author)$
 $if(author.name)$
-$author.name$$if(author.affiliation)$ ($author.affiliation$)$endif$
+\Large $author.name$\vspace{0.05in}  $if(author.affiliation)$ \newline\normalsize\emph{$author.affiliation$} \newline\footnotesize \url{$author.email$}\vspace*{0.2in} \newline $endif$
 $else$
 $author$
 $endif$
 $endfor$
 }
+$if(date)$
 \date{$date$}
-
+$endif$
 
 \begin{document}  
 
