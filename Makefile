@@ -52,7 +52,7 @@ tex:	clean $(TEX)
 
 %.pdf:	%.md
 	sh vc
-	pandoc --latex-engine=xelatex --template=$(PREFIX)/templates/xelatex.template --filter pandoc-citeproc --bibliography=$(BIB) -o $@ $<
+	pandoc --latex-engine=xelatex --template=$(PREFIX)/templates/tom.xelatex --filter pandoc-citeproc --bibliography=$(BIB) -o $@ $<
 
 clean:
 #	rm -f *.html *.pdf *.tex

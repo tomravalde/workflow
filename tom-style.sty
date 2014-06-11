@@ -40,6 +40,8 @@
 %\allsectionsfont{\normalsize\sffamily}
 \sectionfont{\large\sffamily\bfseries}
 \subsectionfont{\large\sffamily\itshape}
+\subsubsectionfont{\sffamily\bfseries}
+\paragraphfont{\sffamily\bfseries}
 %\usepackage[]{titlesec}
 %\newcommand{\sectionbreak}{\clearpage}
 \usepackage{hyphenat}
@@ -68,7 +70,8 @@
 \makeatletter
 \renewcommand{\maketitle}{\bgroup\setlength{\parindent}{0pt}
 
-\includegraphics[width=0.5\textwidth]{./img/ImperialLogo.jpg}\\[3em]
+%\graphicspath{~/workflow}
+\includegraphics[width=0.5\textwidth]{img/ImperialLogo.jpg}\\[3em]
 \begin{flushleft}
 	{\LARGE \bfseries \sffamily \bigskip \bigskip \@title} \\[0.5em]
 	  
@@ -80,8 +83,8 @@
 
 %% Redefine \and and \andnext to remove tabular environment.
 %% Needed below for custom article-styles when multiple authors are present.
-%\renewcommand{\and}{\, }
-%\renewcommand*{\andnext}{%
+\renewcommand{\and}{\, }
+%\renewcommand*{\andnext}{
 %	  \\\medskip }
 
 \renewcommand{\abstractname}{}

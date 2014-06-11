@@ -8,6 +8,10 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 
+$if(tables)$
+\usepackage{longtable}
+$endif$
+
 \usepackage{fontspec}
 
 $if(title)$
@@ -21,6 +25,8 @@ $if(author.name)$
 $else$
 $author$
 $endif$
+$sep$
+\and
 $endfor$
 }
 $if(date)$
