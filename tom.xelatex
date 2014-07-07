@@ -29,15 +29,18 @@ $sep$
 \and
 $endfor$
 }
-$if(date)$
-\date{$date$}
-$endif$
+
+\date{}
 
 \begin{document}  
 
 \setsansfont[Mapping=tex-text]{Linux Biolinum}
 \setmonofont[Mapping=tex-text]{Liberation Mono}
 \setromanfont[Mapping=tex-text]{Gentium Basic}
+
+$if(topline)$
+$date$. $topline$
+$endif$
 
 $if(title)$
 \maketitle
