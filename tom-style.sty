@@ -6,10 +6,12 @@
 %	textwidth=100mm,
 %	marginparsep=2pc,
 %	marginparwidth=12pc]{geometry}
+%\usepackage{fullpage}
 \usepackage{parskip}
 %\usepackage[pdftex]{graphicx}
 \usepackage{color}
 \usepackage[]{graphicx}
+\usepackage{pdflscape}
 \usepackage{subfig}
 \usepackage{array}
 \usepackage{amsmath}
@@ -17,7 +19,12 @@
 \usepackage{pdfpages}
 \usepackage{float}
 \usepackage{multirow}
-\usepackage{hyperref}
+\usepackage{url}
+\usepackage[xetex,
+	breaklinks=true,
+	colorlinks=true]{hyperref}
+\def\UrlBreaks{\do\/\do-}
+%\usepackage{breakurl}
 \usepackage{fixltx2e}
 \usepackage[bottom]{footmisc}
 \usepackage{natbib}
@@ -28,7 +35,6 @@
 %\usepackage[latin1]{inputenc}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,automata}
-\usepackage{url}
 %\usepackage[]{times}
 \usepackage{enumerate}
 \usepackage{listings}
@@ -52,13 +58,13 @@
 
 % Header and footer
 \usepackage{fancyhdr}
-\setlength{\headheight}{15.2pt}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\headsep = 20pt
-\pagestyle{fancyplain}
-%\lhead{\fancyplain{}{\textit{\nouppercase\leftmark}}}
-\rhead{}
+%\setlength{\headheight}{15.2pt}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\headsep = 20pt
+%\pagestyle{fancyplain}
+%%\lhead{\fancyplain{}{\textit{\nouppercase\leftmark}}}
+%\rhead{}
 
 \fancyfoot[LE,LO]{\footnotesize{\texttt{Revision \VCRevision \\on \VCDateISO~at~\VCTime}}}
 
