@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
-$if(fullpage)$
-\usepackage{$fullpage$}
+$if(page-style)$
+\usepackage{$page-style$}
 $endif$
 \usepackage{tom-style}
 \usepackage{custom-local}

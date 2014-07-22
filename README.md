@@ -23,4 +23,7 @@ abstract: |
 
 		fullpage: fullpage
 
-In which case the fullpage package (i.e. narrower margins) will be used.
+Or
+		fullepage: tuftemargin
+
+In which case the fullpage package (i.e. narrower margins) or Tufte style (large right-hand side margins) will be used.
