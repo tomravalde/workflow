@@ -1,4 +1,7 @@
 \documentclass[a4paper]{article}
+$if(fullpage)$
+\usepackage{$fullpage$}
+$endif$
 \usepackage{tom-style}
 \usepackage{custom-local}
 
@@ -44,7 +47,6 @@ $endif$
 
 $if(title)$
 \maketitle
-\thispagestyle{empty}
 $endif$
 
 \bigskip \bigskip 
