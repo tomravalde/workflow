@@ -16,3 +16,11 @@ abstract: |
 
 
 1. See the `Makefile`.
+
+# Options
+
+- The default LaTeX page size will be used, unless the YAML metadata contains the following information:
+
+		fullpage: fullpage
+
+In which case the fullpage package (i.e. narrower margins) will be used.
