@@ -3,3 +3,7 @@
 *.pdf
 *.sty
 *.tex
+.RData
+cache/
+template.md
+!template.pdf

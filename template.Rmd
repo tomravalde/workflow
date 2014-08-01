@@ -1,0 +1,88 @@
+---
+title: A template document
+author: 
+- name: Author 1
+  affiliation: Department of text editors, Vim University
+  email: author.1@vim.co.uk
+- name: Author 2
+  affiliation: Department of text editors, The Emacs Institute
+  email: author.2@emacs.co.uk
+date: 21 October, 2015
+fullpage:
+abstract: |
+  This is the abstract of a template document which can be edited. The content of this document can be modified and added to as necessary. It provides examples of how to handle maths, tables, data analysis and images when making a document using knitr.
+---
+
+<!--
+Notes can be added in the source code of the Rmd file.
+-->
+
+```{r Setup, include=FALSE, results="hide", warning=FALSE}
+opts_chunk$set(fig.path = "figures/", dev=c("cairo_pdf"), fig.pos='htbp', fig.width=5, fig.height=2, dpi=700, fig.show='hold', fig.lp="fig:", cache=TRUE, par=TRUE, echo=FALSE, results="hide", message=FALSE, warning=FALSE)
+
+library(extrafont)
+font_import(pattern="LinBiolinum")
+```
+
+# Introduction
+
+The text in this document can be replaced. The source code (`template.Rmd`) for this document can be found at \url{https://github.com/tomravalde/workflow}, and the PDF can be found at. The GitHub repository provides the requirements and instructions in order to be able to produce this document and others like it.
+
+## Maths
+
+You can mix and match markdown with \LaTeX syntax, for example maths as in Equation \eqref{eq:pythagoras}:
+
+\begin{align}
+a^2 = b^2 + c^2.
+\label{eq:pythagoras}
+\end{align}
+
+## Tables
+
+When typesetting tables (such as Table \ref{tab:text-editors}, I like to use the `xtable` function (from the `xtable` R package). This allows you to create your table in a spreadsheet which you then save as a CSV file (see `text-editors.csv`).
+
+```{r table-text-editors, results="asis"}
+library(xtable)
+
+table.csv <- read.csv("text-editors.csv")
+table.tex <- xtable(table.csv, caption = "The differences between vi and Emacs, from Wikipedia (\\url{http://en.wikipedia.org/wiki/Editor_war}).\\label{tab:text-editors}", align="llp{7cm}p{7cm}")
+
+print(table.tex,
+      size = '\\small',
+      floating.environment='sidewaystable',
+      comment = FALSE,
+      booktabs = TRUE,
+      include.rownames = FALSE,
+      sanitize.text.function = identity)
+```
+
+## Processing and presenting data with knitr
+
+By the magic of knitr, data can be processed and presented in the same source code as the rest of the document. An example is given in Figure \ref{fig:google-fight}.
+
+```{r google-fight, fig.height = 3, fig.cap = "\\label{fig:google-fight}Google fights results."}
+library(ggplot2)
+
+# Define theme for all plots
+theme_tom  <- theme_bw() +
+  theme(text = element_text(family = "Linux Biolinum"),
+	legend.position="top")
+
+fight <- read.csv("vim-emacs-google.csv")
+
+ggplot(fight, aes(Editor, Hits)) +
+  geom_bar(stat = "identity") +
+  theme_tom +
+  theme(axis.title.x = element_blank())
+```
+
+## Images
+
+Unfortunately, controlling the size of a figure with markdown syntax can't be done. So generally for figures, I use standard \LaTeX code, as for Figure \ref{fig:xkcd-text-editors}.
+
+\begin{figure}[htbp]
+        \centering
+        \includegraphics[width=1\textwidth]{img/real_programmers.png}
+        \caption{Text editors according to XKCD (\url{http://xkcd.com/378/).}}
+        \label{fig:xkcd-text-editors}
+\end{figure}
