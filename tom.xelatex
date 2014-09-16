@@ -5,6 +5,23 @@ $endif$
 \usepackage{tom-style}
 \usepackage{custom-local}
 
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+$if(euro)$
+  \usepackage{eurosym}
+$endif$
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+
 \input vc
 
 $if(highlighting-macros)$
@@ -58,5 +75,10 @@ $if(abstract)$
 $endif$
 
 $body$
+
+$if(natbib)$
+\bibliography{/home/tr608/ImpCol/PhD/my-refs.bib}{}
+\bibliographystyle{plainnat}
+$endif$
 
 \end{document}
