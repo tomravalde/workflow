@@ -5,6 +5,17 @@ $endif$
 \usepackage{tom-style}
 \usepackage{custom-local}
 
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\headsep = 20pt
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{$header$}}
+%\lhead{}
+\rhead{}
+\fancyfoot[LE,LO]{\footnotesize{\texttt{Revision \VCRevision \\on \VCDateISO~at~\VCTime}}}
+
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
@@ -29,9 +40,14 @@ $highlighting-macros$
 $endif$
 
 $if(tables)$
-\usepackage{longtable}
+%\usepackage{longtable}
+%\usepackage{threeparttable}
+%\usepackage{tabularx}
+%\usepackage{ctable}
 $endif$
 
+\usepackage{longtable}
+\usepackage{tablefootnote}
 \usepackage{fontspec}
 
 $if(title)$
