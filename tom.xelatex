@@ -49,6 +49,8 @@ $endif$
 \usepackage{longtable}
 \usepackage{tablefootnote}
 \usepackage{fontspec}
+\usepackage{bibentry}
+\nobibliography*
 
 $if(title)$
 \title{$title$}
