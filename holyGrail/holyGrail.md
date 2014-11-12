@@ -22,7 +22,8 @@ Notepad is the standard. Vim is brilliant:
 # LaTeX
 
 1. WYSISYM vs. WYSIWYG
-2.
+2. Have notes within your document source.
+	- One reason: \url{http://retractionwatch.com/2014/11/11/overly-honest-references-should-we-cite-the-crappy-gabor-paper-here/}
 
 # Markdown
 
