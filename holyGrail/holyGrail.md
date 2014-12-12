@@ -16,6 +16,8 @@ Notepad is the standard. Vim is brilliant:
 1. Shortcuts (speed)
 2. Plug-ins
 	- Syntax colouring
+3. Split-screen:
+	- When in your text/code you want to copy from or refer to content elsewhere, without scrolling.
 
 # Git
 
