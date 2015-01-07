@@ -72,7 +72,8 @@ $endfor$
 
 \begin{document}  
 
-\setsansfont[Mapping=tex-text]{Linux Biolinum}
+%\setsansfont[Mapping=tex-text]{Linux Biolinum}
+\setsansfont[Mapping=tex-text]{Ubuntu}
 \setmonofont[Mapping=tex-text]{Liberation Mono}
 \setromanfont[Mapping=tex-text]{Gentium Basic}
 
