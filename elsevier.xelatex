@@ -1,32 +1,6 @@
 \documentclass[$options$]{elsarticle}
-$if(page-style)$
-\usepackage{$page-style$}
-$endif$
+
 \usepackage{custom-local-els}
-
-$if(euro)$
-  \usepackage{eurosym}
-$endif$
-
-%\input vc
-
-$if(highlighting-macros)$
-$highlighting-macros$
-$endif$
-
-$if(tables)$
-%\usepackage{longtable}
-%\usepackage{threeparttable}
-%\usepackage{tabularx}
-%\usepackage{ctable}
-$endif$
-
-\usepackage{amsmath}
-\usepackage{longtable}
-\usepackage{tablefootnote}
-\usepackage{fontspec}
-\usepackage{bibentry}
-\nobibliography*
 
 \journal{$journal$}
 
