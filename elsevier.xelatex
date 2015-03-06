@@ -48,6 +48,11 @@ $endfor$
 
 \cortext[cor1]{Corresponding author}
 
+$if(address-general)$
+\address{$address-general$}
+
+$else$
+
 $for(author1)$
 \address[$author1.group$]{$author1.address$}
 $endfor$
@@ -55,6 +60,8 @@ $endfor$
 $for(author2)$
 \address[$author2.group$]{$author2.address$}
 $endfor$
+
+$endif$
 
 \begin{abstract}
 $abstract$
