@@ -37,11 +37,23 @@ $endif$
 \title{$title$}
 
 $for(author)$
-\author{$author.name$}
+\author[$author.group$]{$author.name$}
 \ead{$author.email$}
 $endfor$
 
 \cortext[cor1]{Corresponding author}
+
+$if(address-general)$
+
+\address{$address-general$}
+
+$else$
+
+$for(author)$
+\address[$author.group$]{$author.address$}
+$endfor$
+
+$endif$
 
 \begin{abstract}
 $abstract$
