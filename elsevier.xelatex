@@ -43,7 +43,7 @@ $body$
 
 $if(natbib)$
 \section*{References}
-\bibliography{/home/tr608/ImpCol/PhD/my-refs.bib}{}
+\bibliography{$biblio-files$}{}
 \bibliographystyle{elsarticle-harv}
 $endif$
 
