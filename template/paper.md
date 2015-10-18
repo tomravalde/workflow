@@ -8,7 +8,7 @@ author:
   affiliation: Department of text editors, The Emacs Institute
   email: author.2@emacs.co.uk
 date: 21 October, 2015
-fullpage:
+biblio-files: my-refs
 abstract: |
   This is the abstract of a template document which can be edited. The content of this document can be modified and added to as necessary. It provides examples of how to handle maths, tables, data analysis and images when making a document using knitr.
 ---

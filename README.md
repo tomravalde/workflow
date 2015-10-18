@@ -16,6 +16,7 @@ The workflow and templates to generate nice documents using knitr, markdown, pan
 
 - `tom-style.sty` is where I put code to load relevant LaTeX packages etc.
 - `tom.xelatex` is the template which pandoc uses to convert a Markdown document to TeX code. The pandoc documentation explains how these work [here](http://pandoc.org/demo/example9/templates.html).
+- `template/custom-local.sty` loads any additional LaTeX packages for a specific document.
 - BONUS: `elsevier.xelatex` is a template for writing manuscripts to be submitted to Elsevier journals.
 
 ## Setup

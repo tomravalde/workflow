@@ -1,7 +1,9 @@
 *.Rhistory
 *.jpg
+!ImperialLogo.jpg
 *.pdf
 *.sty
+!custom-local.sty
 *.tex
 .RData
 cache/

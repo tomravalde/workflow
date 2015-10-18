@@ -96,7 +96,7 @@ $endif$
 $body$
 
 $if(natbib)$
-\bibliography{/home/tr608/ImpCol/PhD/my-refs.bib}{}
+\bibliography{$biblio-files$}{}
 \bibliographystyle{plainnat}
 $endif$
 
