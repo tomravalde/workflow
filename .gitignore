@@ -13,3 +13,4 @@ template.md
 *.blg
 *.log
 *.out
+/holyGrail

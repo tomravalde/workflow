@@ -16,6 +16,7 @@ The workflow and templates to generate nice documents using knitr, markdown, pan
 
 - `tom-style.sty` is where I put code to load relevant LaTeX packages etc.
 - `tom.xelatex` is the template which pandoc uses to convert a Markdown document to TeX code. The pandoc documentation explains how these work [here](http://pandoc.org/demo/example9/templates.html).
+- BONUS: `elsevier.xelatex` is a template for writing manuscripts to be submitted to Elsevier journals.
 
 ## Setup
 
@@ -28,7 +29,7 @@ The workflow and templates to generate nice documents using knitr, markdown, pan
 
 ## Writing a document and building a PDF
 
-To generate a PDF from using `R` and markdown.
+The contents of the [template/](template) subdirectory will build the [template.pdf](template/template.pdf) document. To generate a PDF from using R and markdown.
 
 1. Initialise a new writing project with an Rmd file in a new directory, e.g. `~/working-directory/paper.Rmd`.
 2. Copy the Makefile into the working directory: `cp ~/workflow/Makefile ~/working-directory`.
