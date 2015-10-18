@@ -39,3 +39,7 @@ The contents of the [template/](template) subdirectory will build the [template.
 3. Copy the version control files (`vc` and `vc-git.awk`) to the working directory.
 4. Write a document using R-markdown syntax (e.g. paper.Rmd)
 5. Run `build-pdf.sh`. This will use R to 'knit' the Rmd file into a md file, and then use pandoc to covert the md file into a PDF using LaTeX. It will also open the PDF and a word count (as a HTML file).
+
+## More information
+
+Please email [Tom Ravalde](mailto:thomas.ravald08@imperial.ac.uk).
