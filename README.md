@@ -32,7 +32,7 @@ I can then come back the workflow/ directory and make edits to the dependencies,
 
 ## Writing a document and building a PDF
 
-The contents of the [template/](template) subdirectory will build the [template.pdf](template/template.pdf) document. To generate a PDF from using R and markdown.
+The contents of the [template/](template) subdirectory will build the [paper.pdf](template/paper.pdf) document. To generate a PDF from using R and markdown.
 
 1. Initialise a new writing project with an Rmd file in a new directory, e.g. `~/working-directory/paper.Rmd`.
 2. Copy `build-pdf.sh` into the working directory.
