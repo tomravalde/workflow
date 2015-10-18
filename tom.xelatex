@@ -5,6 +5,34 @@ $endif$
 \usepackage{tom-style}
 \usepackage{custom-local}
 
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\headsep = 20pt
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{$header$}}
+%\lhead{}
+\rhead{}
+\fancyfoot[LE,LO]{\footnotesize{\texttt{Revision \VCRevision \\on \VCDateISO~at~\VCTime}}}
+
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+$if(euro)$
+  \usepackage{eurosym}
+$endif$
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+
 \input vc
 
 $if(highlighting-macros)$
@@ -12,10 +40,17 @@ $highlighting-macros$
 $endif$
 
 $if(tables)$
-\usepackage{longtable}
+%\usepackage{longtable}
+%\usepackage{threeparttable}
+%\usepackage{tabularx}
+%\usepackage{ctable}
 $endif$
 
+\usepackage{longtable}
+\usepackage{tablefootnote}
 \usepackage{fontspec}
+\usepackage{bibentry}
+\nobibliography*
 
 $if(title)$
 \title{$title$}
@@ -37,9 +72,9 @@ $endfor$
 
 \begin{document}  
 
-\setsansfont[Mapping=tex-text]{Linux Biolinum}
-\setmonofont[Mapping=tex-text]{Liberation Mono}
-\setromanfont[Mapping=tex-text]{Gentium Basic}
+%\setsansfont[Mapping=tex-text]{Ubuntu}
+%\setmonofont[Mapping=tex-text]{Liberation Mono}
+%\setromanfont[Mapping=tex-text]{Gentium Basic}
 
 $if(topline)$
 $date$. $topline$
@@ -58,5 +93,10 @@ $if(abstract)$
 $endif$
 
 $body$
+
+$if(natbib)$
+\bibliography{$biblio-files$}{}
+\bibliographystyle{plainnat}
+$endif$
 
 \end{document}
