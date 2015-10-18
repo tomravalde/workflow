@@ -26,20 +26,20 @@ font_import(pattern="LinBiolinum")
 
 # Introduction
 
-The text in this document can be replaced. The source code (`template.Rmd`) for this document can be found at \url{https://github.com/tomravalde/workflow}, and the PDF can be found at. The GitHub repository provides the requirements and instructions in order to be able to produce this document and others like it.
+The text in this document can be replaced. This document's source code (`paper.Rmd`) is available at \url{https://github.com/tomravalde/workflow}, along with the scripts and dependencies required to build the PDF. The GitHub repository provides the requirements and instructions in order to be able to produce this document and others like it. This workflow is based on that described in @Healy2014 and uses Markdown, LaTeX, R, the knitr R-package [@knitr2015] and pandoc [@MacFarlane2014].
 
-## Maths
+# Maths
 
-You can mix and match markdown with \LaTeX syntax, for example maths as in Equation \eqref{eq:pythagoras}:
+You can mix and match Markdown with \LaTeX syntax, for example for mathematical typesetting as in Equation \eqref{eq:pythag}:
 
 \begin{align}
 a^2 = b^2 + c^2.
-\label{eq:pythagoras}
+\label{eq:pythag}
 \end{align}
 
-## Tables
+# Tables
 
-When typesetting tables (such as Table \ref{tab:text-editors}, I like to use the `xtable` function (from the `xtable` R package). This allows you to create your table in a spreadsheet which you then save as a CSV file (see `text-editors.csv`).
+When typesetting tables (such as Table \ref{tab:text-editors}), I like to use the `xtable` function (from the `xtable` R package). This allows you to create your table in a spreadsheet which you then save as a CSV file (see `text-editors.csv`).
 
 ```{r table-text-editors, results="asis"}
 library(xtable)
@@ -56,9 +56,9 @@ print(table.tex,
       sanitize.text.function = identity)
 ```
 
-## Processing and presenting data with knitr
+# Processing and presenting data with knitr
 
-By the magic of knitr, data can be processed and presented in the same source code as the rest of the document. An example is given in Figure \ref{fig:google-fight}.
+By the magic of knitr, data can be processed and presented using the same source code as the rest of the document's content. An example is given in Figure \ref{fig:google-fight}.
 
 ```{r google-fight, fig.height = 3, fig.cap = "\\label{fig:google-fight}Google fights results."}
 library(ggplot2)
@@ -70,15 +70,16 @@ theme_tom  <- theme_bw() +
 
 fight <- read.csv("vim-emacs-google.csv")
 
-ggplot(fight, aes(Editor, Hits)) +
-  geom_bar(stat = "identity") +
+ggplot(fight, aes(Editor, Hits/1e6)) +
   theme_tom +
+  geom_bar(stat = "identity") +
+  ylab("Hits (millions)") +
   theme(axis.title.x = element_blank())
 ```
 
-## Images
+# Images
 
-Unfortunately, controlling the size of a figure with markdown syntax can't be done. So generally for figures, I use standard \LaTeX code, as for Figure \ref{fig:xkcd-text-editors}.
+Unfortunately, using Markdown to specify a figure size in a PDF is near-impossible. So for figures, I use standard \LaTeX code, as for Figure \ref{fig:xkcd-text-editors}.
 
 \begin{figure}[htbp]
         \centering

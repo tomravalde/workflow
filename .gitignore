@@ -7,3 +7,9 @@
 cache/
 template.md
 !template.pdf
+*.html
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
