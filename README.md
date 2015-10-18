@@ -1,6 +1,6 @@
 # 'Workflow: tools and templates'
 
-The workflow and templates to generate nice documents using knitr, markdown, pandoc and version control.
+The workflow and templates to generate nice documents using knitr, markdown, LaTeX, pandoc (all under version control).
 
 ## Pre-requisites
 
@@ -23,17 +23,19 @@ The workflow and templates to generate nice documents using knitr, markdown, pan
 
 1. Download the contents of this repository into a known location, for example `~/workflow`.
 
-2. In order to keep all the dependencies and templates together in one directory (which can then be kept under version control), I use symlinks so pandoc and LaTeX can search the locations they expect for the dependencies:
+2. In order to keep all the dependencies and templates together in one directory (which can then be kept under version control), I use symlinks so pandoc and LaTeX can search the locations they expect for the dependencies.
 
 		ln -s ~/workflow/tom-style.sty ~/texmf/tex/latex/myStyles/tom-style.sty
 		ln -s ~/workflow/tom.xelatex ~/.pandoc/templates/tom.xelatex
+
+I can then come back the workflow/ directory and make edits to the dependencies, which will be automatically updated in their linked-to locations.
 
 ## Writing a document and building a PDF
 
 The contents of the [template/](template) subdirectory will build the [template.pdf](template/template.pdf) document. To generate a PDF from using R and markdown.
 
 1. Initialise a new writing project with an Rmd file in a new directory, e.g. `~/working-directory/paper.Rmd`.
-2. Copy the Makefile into the working directory: `cp ~/workflow/Makefile ~/working-directory`.
+2. Copy `build-pdf.sh` into the working directory.
 3. Copy the version control files (`vc` and `vc-git.awk`) to the working directory.
-4. Write a document using R-markdown synatax (e.g. paper.Rmd)
-5. Run the script `build-pdf.sh`. This will use R to 'knit' the Rmd file into a md file, and then use pandoc to covert the md file into a PDF using LaTeX.
+4. Write a document using R-markdown syntax (e.g. paper.Rmd)
+5. Run `build-pdf.sh`. This will use R to 'knit' the Rmd file into a md file, and then use pandoc to covert the md file into a PDF using LaTeX. It will also open the PDF and a word count (as a HTML file).
