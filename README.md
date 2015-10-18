@@ -36,4 +36,4 @@ The contents of the [template/](template) subdirectory will build the [template.
 2. Copy the Makefile into the working directory: `cp ~/workflow/Makefile ~/working-directory`.
 3. Copy the version control files (`vc` and `vc-git.awk`) to the working directory.
 4. Write a document using R-markdown synatax (e.g. paper.Rmd)
-5. Run the script `build-doc.sh`. This will use R to 'knit' the Rmd file into a md file, and then use pandoc to covert the md file into a PDF using LaTeX.
+5. Run the script `build-pdf.sh`. This will use R to 'knit' the Rmd file into a md file, and then use pandoc to covert the md file into a PDF using LaTeX.
