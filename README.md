@@ -18,6 +18,8 @@ The workflow and templates to generate nice documents using knitr, markdown, LaT
 - `tom.xelatex` is the template which pandoc uses to convert a Markdown document to TeX code. The pandoc documentation explains how these work [here](http://pandoc.org/demo/example9/templates.html).
 - `template/custom-local.sty` loads any additional LaTeX packages for a specific document.
 - BONUS: `elsevier.xelatex` is a template for writing manuscripts to be submitted to Elsevier journals.
+- `html.template` is a pandoc template downloaded from [Kieran Healy's pandoc-templates repository](https://github.com/kjhealy/pandoc-templates), and can be used when building HTML files from Markdown source.
+- `kutiad-serif.css` is a CSS file downloaded from [Kieran Healy's pandoc-templates repository](https://github.com/kjhealy/pandoc-templates), and can be used in conjunction with the HTML pandoc template, for a nicely styled HTML output, when building from Markdown source.
 
 ## Setup
 
@@ -27,6 +29,8 @@ The workflow and templates to generate nice documents using knitr, markdown, LaT
 
 		ln -s ~/workflow/tom-style.sty ~/texmf/tex/latex/myStyles/tom-style.sty
 		ln -s ~/workflow/tom.xelatex ~/.pandoc/templates/tom.xelatex
+		ln -s ~/workflow/html.template ~/.pandoc/templates/html.template
+		ln -s ~/workflow/marked/kultiad-serif.css~/.pandoc/marked/kultiad-serif.css
 
 I can then come back the workflow/ directory and make edits to the dependencies, which will be automatically updated in their linked-to locations.
 
